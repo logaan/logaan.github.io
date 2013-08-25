@@ -131,17 +131,17 @@ coordination__. If anyone disagrees with my observations, or has a better
 understanding of what's going on than I do, please [email][my-email] or [tweet
 at][my-twitter] me.
 
-[nolen-twitter]: https://twitter.com/swannodette
-[csp-is-responsive]: http://swannodette.github.io/2013/07/31/extracting-processes/
-[wiki-csp]: http://en.wikipedia.org/wiki/Communicating_sequential_processes
-[simple-made-easy]: http://www.infoq.com/presentations/Simple-Made-Easy
-[promise-stream]: https://github.com/logaan/promise-stream
-[core-async]: https://github.com/clojure/core.async
-[wiki-hofs]: http://en.wikipedia.org/wiki/Higher_order_functions
-[ep-core]: https://github.com/logaan/extracting-processes/blob/master/src/extracting_processes/core.cljs
-[wiki-promises]: http://en.wikipedia.org/wiki/Futures_and_promises
-[wiki-cons]: http://en.wikipedia.org/wiki/Cons
-[data-flow-graph]: data-flow.svg
-[quick-search-example]: https://github.com/logaan/promise-stream/blob/master/test/promise_stream/quick_search_example.cljs
-[my-email]: mailto:colin@logaan.net
-[my-twitter]: https://twitter.com/logaan
+[nolen-twitter]:         https://twitter.com/swannodette
+[csp-is-responsive]:     http://swannodette.github.io/2013/07/31/extracting-processes/
+[wiki-csp]:              http://en.wikipedia.org/wiki/Communicating_sequential_processes
+[simple-made-easy]:      http://www.infoq.com/presentations/Simple-Made-Easy
+[promise-stream]:        https://github.com/logaan/promise-stream
+[core-async]:            https://github.com/clojure/core.async
+[wiki-hofs]:             http://en.wikipedia.org/wiki/Higher_order_functions
+[ep-core]:               https://github.com/logaan/extracting-processes/blob/master/src/extracting_processes/core.cljs
+[wiki-promises]:         http://en.wikipedia.org/wiki/Futures_and_promises
+[wiki-cons]:             http://en.wikipedia.org/wiki/Cons
+[data-flow-graph]:       /post-resources/a-response-to-csp-is-responsive-design/data-flow.svg
+[quick-search-example]:  https://github.com/logaan/promise-stream/blob/master/test/promise_stream/quick_search_example.cljs
+[my-email]:              mailto:colin@logaan.net
+[my-twitter]:            https://twitter.com/logaan
