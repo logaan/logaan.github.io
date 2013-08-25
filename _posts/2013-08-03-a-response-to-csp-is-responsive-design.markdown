@@ -6,28 +6,28 @@ categories: clojurescript csp promise-stream
 ---
 
 Recently [David Nolen] [nolen-twitter] has [written about] [csp-is-responsive]
-how a combination of __event stream processing__ and [communicating sequential
+how a combination of _event stream processing_ and [communicating sequential
 processes] [wiki-csp] can be used to [simplify] [simple-made-easy] user
 interface programming.
 
 He proposes a novel three part architecture consisting of:
 
-1. __Event stream processing__
-2. __Event stream coordination__
-3. __Interface representation__
+1. _Event stream processing_
+2. _Event stream coordination_
+3. _Interface representation_
 
-I'm quite taken with __stream processing__, so much so that I'm writing [a
-ClojureScript library] [promise-stream] that enables it. __Interface
-representation__ is a brilliant idea and I wish I'd thought of it before.
-However __stream coordination__ was new to me and it is the main focus of this
+I'm quite taken with _stream processing_, so much so that I'm writing [a
+ClojureScript library] [promise-stream] that enables it. _Interface
+representation_ is a brilliant idea and I wish I'd thought of it before.
+However _stream coordination_ was new to me and it is the main focus of this
 response.
 
 ## Stream Coordination Examples
 
-Nolen gives no strict definition for __stream coordination__, instead he
+Nolen gives no strict definition for _stream coordination_, instead he
 illustrates with examples. To me the examples look more complex, and less
-functional, than raw __stream processing__. So I'm left feeling that __stream
-coordination__ should be avoided.
+functional, than raw _stream processing_. So I'm left feeling that _stream
+coordination_ should be avoided.
 
 The coordination functions `selector` and `highlighter` take and return
 [core.async] [core-async] channels. This is great as it means these processes
@@ -49,8 +49,8 @@ approach:
 
 ## Raw stream processing
 
-I've implemented the highlight / selection example using raw __stream
-processing__. _Click in the box to give it focus then use up, down, j, k and
+I've implemented the highlight / selection example using raw _stream
+processing_. _Click in the box to give it focus then use up, down, j, k and
 enter to change highlight and make selections._
 
 <div class="example">
@@ -103,8 +103,8 @@ _I've created [a graph] [data-flow-graph] of the data flow through the system.
 It labels the kinds of events at each step and may help you get a feel for how
 everything ties together._
 
-This __stream processing__ code addresses my concerns with the __stream
-coordination__ code.
+This _stream processing_ code addresses my concerns with the _stream
+coordination_ code.
 
 1. `load-example` grabs events from the document, feeds them through the purely
    functional code, and finally dumps the rendered ui into the dom. This is
@@ -122,12 +122,12 @@ coordination__ code.
 My code only takes the first two steps from Nolen's post. It's possible that
 there are complications introduced from the mouse interactions that haven't
 occurred to me. But I've previously written [the other half of an
-autocompleter] [quick-search-example] and I think I see how a full __stream
-processing__ solution would come together.
+autocompleter] [quick-search-example] and I think I see how a full _stream
+processing_ solution would come together.
 
-I'm looking forward to seeing the concluding post in his __CSP__ autocompleter
-series. I hope that he clarifies exactly what he has in mind by __stream
-coordination__. If anyone disagrees with my observations, or has a better
+I'm looking forward to seeing the concluding post in his _CSP_ autocompleter
+series. I hope that he clarifies exactly what he has in mind by _stream
+coordination_. If anyone disagrees with my observations, or has a better
 understanding of what's going on than I do, please [email] [my-email] or [tweet
 at] [my-twitter] me.
 
