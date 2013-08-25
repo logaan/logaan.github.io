@@ -5,12 +5,9 @@ date:   2013-08-24 20:02:01
 categories: clojurescript csp promise-stream
 ---
 
-Recently <a href="https://twitter.com/swannodette">David Nolen</a> has <a
-href="http://swannodette.github.io/2013/07/31/extracting-processes/">written
-about</a> how a combination of __event stream processing__ and <a
-href="http://en.wikipedia.org/wiki/Communicating_sequential_processes">
-communicating sequential processes</a> can be used to <a
-href="http://www.infoq.com/presentations/Simple-Made-Easy"> simplify</a> user
+Recently [David Nolen][nolen-twitter] has [written
+about][1] how a combination of __event stream processing__ and[ 
+communicating sequential processes][2] can be used to [ simplify][3] user
 interface programming.
 
 He proposes a novel three part architecture consisting of:
@@ -20,8 +17,8 @@ He proposes a novel three part architecture consisting of:
 3. __Interface representation__
 
 I'm quite taken with __stream processing__, so much so that I'm
-writing <a href="https://github.com/logaan/promise-stream">a ClojureScript
-library</a> that enables it. __Interface representation__ is a
+writing [a ClojureScript
+library][4] that enables it. __Interface representation__ is a
 brilliant idea and I wish I'd thought of it before. However __stream
 coordination__ was new to me and it is the main focus of this response.
 
@@ -33,7 +30,7 @@ less functional, than raw __stream processing__. So I'm left
 feeling that __stream coordination__ should be avoided.
 
 The coordination functions `selector` and `highlighter`
-take and return <a href="https://github.com/clojure/core.async">core.async</a>
+take and return [core.async][5]
 channels. This is great as it means these processes don't care where the events
 come from or end up. Composing them extends the functionality of the user
 interface. But there are some drawbacks to this approach:
@@ -44,9 +41,8 @@ interface. But there are some drawbacks to this approach:
 2. Recognition, and processing of events are handled in the same function. A
    simpler design would split these responsibilities.
 3. Explicit flow control (`loop`/`recur`) and event
-   emission (`&gt;!`) are required. <a
-   href="http://en.wikipedia.org/wiki/Higher_order_functions">Higher-order
-   functions</a> could eliminate both of these chores.
+   emission (`&gt;!`) are required. [Higher-order
+   functions][6] could eliminate both of these chores.
 4. The functions emit only unknown events. This means they must assume all
    responsibility for those events which they process.  This is less flexible
    than allowing for multiple consumers of each channel.
@@ -61,13 +57,11 @@ j, k and enter to change highlight and make selections._
   <pre id="ex1" tabindex="1"></pre>
 </div>
 
-You can see the full code <a
-href="https://github.com/logaan/extracting-processes/blob/master/src/extracting_processes/core.cljs">on
-github</a> but I've included the meat of it here. It's written using <a
-href="https://github.com/logaan/promise-stream">promise-streams</a> which aim
+You can see the full code [on
+github][7] but I've included the meat of it here. It's written using [promise-streams][8] which aim
 to provide event streams in an idiomatic Clojure way.  They're implemented as
-<a href="http://en.wikipedia.org/wiki/Futures_and_promises">promises</a>
-wrapped around <a href="http://en.wikipedia.org/wiki/Cons">cons cells</a>, and
+[promises][9]
+wrapped around [cons cells][10], and
 provide asynchronous versions of Clojure's sequence functions.
 
 {% highlight clojure %}
@@ -106,7 +100,7 @@ provide asynchronous versions of Clojure's sequence functions.
     (jq/text output (render-ui ui first-state)))
 {% endhighlight %}
 
-_I've created <a href="data-flow.svg">a graph</a> of the data flow through the
+_I've created [a graph][11] of the data flow through the
 system. It labels the kinds of events at each step and may help you get a feel
 for how everything ties together._
 
@@ -130,14 +124,27 @@ __stream coordination__ code.
 
 My code only takes the first two steps from Nolen's post. It's possible that
 there are complications introduced from the mouse interactions that haven't
-occurred to me. But I've previously written <a
-href="https://github.com/logaan/promise-stream/blob/master/test/promise_stream/quick_search_example.cljs">the
-other half of an autocompleter</a> and I think I see how a full __stream
+occurred to me. But I've previously written [the
+other half of an autocompleter][12] and I think I see how a full __stream
 processing__ solution would come together.
 
 I'm looking forward to seeing the concluding post in his __CSP__
 autocompleter series. I hope that he clarifies exactly what he has in mind by
 __stream coordination__. If anyone disagrees with my observations,
-or has a better understanding of what's going on than I do, please <a
-href="mailto:colin@logaan.net">email</a> or <a
-href="https://twitter.com/logaan">tweet at</a> me.
+or has a better understanding of what's going on than I do, please [email][13] or [tweet at][14] me.
+
+[nolen-twitter]: https://twitter.com/swannodette
+[1]: http://swannodette.github.io/2013/07/31/extracting-processes/
+[2]: http://en.wikipedia.org/wiki/Communicating_sequential_processes
+[3]: http://www.infoq.com/presentations/Simple-Made-Easy
+[4]: https://github.com/logaan/promise-stream
+[5]: https://github.com/clojure/core.async
+[6]: http://en.wikipedia.org/wiki/Higher_order_functions
+[7]: https://github.com/logaan/extracting-processes/blob/master/src/extracting_processes/core.cljs
+[8]: https://github.com/logaan/promise-stream
+[9]: http://en.wikipedia.org/wiki/Futures_and_promises
+[10]: http://en.wikipedia.org/wiki/Cons
+[11]: data-flow.svg
+[12]: https://github.com/logaan/promise-stream/blob/master/test/promise_stream/quick_search_example.cljs
+[13]: mailto:colin@logaan.net
+[14]: https://twitter.com/logaan
