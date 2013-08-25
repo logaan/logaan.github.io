@@ -131,6 +131,9 @@ coordination__. If anyone disagrees with my observations, or has a better
 understanding of what's going on than I do, please [email][my-email] or [tweet
 at][my-twitter] me.
 
+<script src="/post-resources/a-response-to-csp-is-responsive-design/jquery.js"></script>
+<script src="/post-resources/a-response-to-csp-is-responsive-design/main.js"></script>
+
 [nolen-twitter]:         https://twitter.com/swannodette
 [csp-is-responsive]:     http://swannodette.github.io/2013/07/31/extracting-processes/
 [wiki-csp]:              http://en.wikipedia.org/wiki/Communicating_sequential_processes
