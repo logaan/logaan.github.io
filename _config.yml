@@ -1,3 +1,6 @@
 author: Logan Campbell
+description: I write about building web apps using FP. Mostly Clojure and Clojurescript.
+url: http://logaan.github.io
+
 markdown: redcarpet
 pygments: true
