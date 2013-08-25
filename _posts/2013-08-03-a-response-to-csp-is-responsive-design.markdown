@@ -5,10 +5,10 @@ date:   2013-08-24 20:02:01
 categories: clojurescript csp promise-stream
 ---
 
-Recently [David Nolen][nolen-twitter] has [written about][csp-is-responsive]
+Recently [David Nolen] [nolen-twitter] has [written about] [csp-is-responsive]
 how a combination of __event stream processing__ and [communicating sequential
-processes][wiki-csp] can be used to [simplify][simple-made-easy] user interface
-programming.
+processes] [wiki-csp] can be used to [simplify] [simple-made-easy] user
+interface programming.
 
 He proposes a novel three part architecture consisting of:
 
@@ -17,7 +17,7 @@ He proposes a novel three part architecture consisting of:
 3. __Interface representation__
 
 I'm quite taken with __stream processing__, so much so that I'm writing [a
-ClojureScript library][promise-stream] that enables it. __Interface
+ClojureScript library] [promise-stream] that enables it. __Interface
 representation__ is a brilliant idea and I wish I'd thought of it before.
 However __stream coordination__ was new to me and it is the main focus of this
 response.
@@ -30,7 +30,7 @@ functional, than raw __stream processing__. So I'm left feeling that __stream
 coordination__ should be avoided.
 
 The coordination functions `selector` and `highlighter` take and return
-[core.async][core-async] channels. This is great as it means these processes
+[core.async] [core-async] channels. This is great as it means these processes
 don't care where the events come from or end up. Composing them extends the
 functionality of the user interface. But there are some drawbacks to this
 approach:
@@ -41,7 +41,7 @@ approach:
 2. Recognition, and processing of events are handled in the same function. A
    simpler design would split these responsibilities.
 3. Explicit flow control (`loop`/`recur`) and event emission (`>!`) are
-   required. [Higher-order functions][wiki-hofs] could eliminate both of these
+   required. [Higher-order functions] [wiki-hofs] could eliminate both of these
    chores.
 4. The functions emit only unknown events. This means they must assume all
    responsibility for those events which they process.  This is less flexible
@@ -54,13 +54,13 @@ processing__. _Click in the box to give it focus then use up, down, j, k and
 enter to change highlight and make selections._
 
 <div class="example">
-  <pre id="ex1" tabindex="1"></pre>
+  <pre id="ex1" tabindex="1">Interactive Example</pre>
 </div>
 
-You can see the full code [on github][ep-core] but I've included the meat of it
-here. It's written using [promise-streams][promise-stream] which aim to provide
-event streams in an idiomatic Clojure way.  They're implemented as
-[promises][wiki-promises] wrapped around [cons cells][wiki-cons], and provide
+You can see the full code [on github] [ep-core] but I've included the meat of
+it here. It's written using [promise-streams] [promise-stream] which aim to
+provide event streams in an idiomatic Clojure way. They're implemented as
+[promises] [wiki-promises] wrapped around [cons cells] [wiki-cons], and provide
 asynchronous versions of Clojure's sequence functions.
 
 {% highlight clojure %}
@@ -99,7 +99,7 @@ asynchronous versions of Clojure's sequence functions.
     (jq/text output (render-ui ui first-state)))
 {% endhighlight %}
 
-_I've created [a graph][data-flow-graph] of the data flow through the system.
+_I've created [a graph] [data-flow-graph] of the data flow through the system.
 It labels the kinds of events at each step and may help you get a feel for how
 everything ties together._
 
@@ -122,14 +122,14 @@ coordination__ code.
 My code only takes the first two steps from Nolen's post. It's possible that
 there are complications introduced from the mouse interactions that haven't
 occurred to me. But I've previously written [the other half of an
-autocompleter][quick-search-example] and I think I see how a full __stream
+autocompleter] [quick-search-example] and I think I see how a full __stream
 processing__ solution would come together.
 
 I'm looking forward to seeing the concluding post in his __CSP__ autocompleter
 series. I hope that he clarifies exactly what he has in mind by __stream
 coordination__. If anyone disagrees with my observations, or has a better
-understanding of what's going on than I do, please [email][my-email] or [tweet
-at][my-twitter] me.
+understanding of what's going on than I do, please [email] [my-email] or [tweet
+at] [my-twitter] me.
 
 <script src="/post-resources/a-response-to-csp-is-responsive-design/jquery.js"></script>
 <script src="/post-resources/a-response-to-csp-is-responsive-design/main.js"></script>
