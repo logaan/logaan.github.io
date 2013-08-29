@@ -110,10 +110,10 @@ capabilities of the type system and how to use it. I also spotted the
 better resources for figuring out how to begin than my frantic scan of the api
 docs and tutorials.
 
-[github]: [https://github.com/clojure/core.typed]
-[mailing-list]: [https://groups.google.com/forum/m/#!msg/clojure/U_aA_Ce3qWg/GQDN8I0c43QJ]
-[youtube]: [http://www.youtube.com/watch?v=wNhK8t3uLJU]
-[docs]: [http://clojure.github.io/core.typed/#clojure.core.typed/check-ns]
-[twitter]: [https://twitter.com/ambrosebs]
-[quickstart]: [https://github.com/clojure/core.typed#quickstart]
+[github]:        https://github.com/clojure/core.typed
+[mailing-list]:  https://groups.google.com/forum/m/#!msg/clojure/U_aA_Ce3qWg/GQDN8I0c43QJ
+[youtube]:       http://www.youtube.com/watch?v=wNhK8t3uLJU
+[docs]:          http://clojure.github.io/core.typed/#clojure.core.typed/check-ns
+[twitter]:       https://twitter.com/ambrosebs
+[quickstart]:    https://github.com/clojure/core.typed#quickstart
 
