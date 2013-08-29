@@ -90,15 +90,30 @@ column location.
 
 I'm super impressed.
 
+--------------------------------------------------------------------------------
+
 I've written a few libraries myself and I try really hard to make them easy for
 others to work with. But it can be difficult to get feedback more detailed than
 "I checked it out, it was cool". So in that spirit I've recorded my first
 20 minutes with core.typed. It's mostly me failing to get it to work, and may
-only be of interest to [Ambrose][twitter] himself.
+only be of interest to [Ambrose] [twitter] himself.
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/WYxpYfpuJ6Y"
+frameborder="0" allowfullscreen></iframe>&nbsp;
+
+--------------------------------------------------------------------------------
+
+Since having had this first look I've watched the [Typed Clojure video]
+[youtube] from the 2012 conj. In it Ambrose goes into depth about the
+capabilities of the type system and how to use it. I also spotted the
+[Quickstart] [quickstart] section from the readme. Either of these are probably
+better resources for figuring out how to begin than my frantic scan of the api
+docs and tutorials.
 
 [github]: [https://github.com/clojure/core.typed]
 [mailing-list]: [https://groups.google.com/forum/m/#!msg/clojure/U_aA_Ce3qWg/GQDN8I0c43QJ]
 [youtube]: [http://www.youtube.com/watch?v=wNhK8t3uLJU]
 [docs]: [http://clojure.github.io/core.typed/#clojure.core.typed/check-ns]
 [twitter]: [https://twitter.com/ambrosebs]
+[quickstart]: [https://github.com/clojure/core.typed#quickstart]
 
