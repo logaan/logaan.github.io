@@ -47,7 +47,7 @@ to be overcome in the near future.
 
 Even with these limitations I think it's awesome that a dynamic language can
 have a type system added to it without needing any compiler extensions. If you
-do to then [help support the development of core.typed] [indie-gogo].
+do too then [help support the development of core.typed] [indie-gogo].
 
 [core.typed]: https://github.com/clojure/core.typed
 [game-of-life]: http://en.wikipedia.org/wiki/Conway's_Game_of_Life
