@@ -1,0 +1,61 @@
+---
+layout: post
+title:  "core.typed Game of Life"
+date:   2013-10-02
+categories: clojure core.typed
+---
+
+I wanted to see how [core.typed] [core.typed] would deal with annotating some
+of my production Clojure code. After hitting an issue with protocols, and
+spending all of 5 minutes unable to fix it, my gen Y attention span kicked in
+and I lowered my goals. Instead I wrote a plain Clojure solution to [Conway's
+Game of Life] [game-of-life] and then annotated it with core.typed. Then got a
+friend to re-write it in [Scala] [scala]. Then re-wrote it myself in [Haskell]
+[haskell].
+
+This should give you the 10,000 feet view:
+
+[<img src="/images/birds-eye-view-typed-gol-thumbnail.gif" />]
+[birds-eye-view-full]
+
+If you want the details view the [full image] [birds-eye-view-full] or the
+[source on github] [gol-github].
+
+The algorithm is mostly the same across solutions. It's not the best but it
+makes use of some intermediate representations that I thought would be
+interesting to type check. The core idea is that by merging overlapping
+neighbourhoods that have a some understanding of the world you eventually
+arrive at the truth. When there are key collisions the cells are merged and
+they become more and more accurate. For instance `(cell false 1)` and `(cell
+true 0)` merge to `(cell true 1)` and we know that the cell is alive and has at
+least one neighbour.
+
+You can see that typed Clojure solution was the largest. But I don't think it's
+unreasonably large. I couldn't bring myself to do a Java version but I'd expect
+it to be several times larger. There are a couple of limitations to the local
+type inferencing that this example hit.
+
+Firstly `for` loops must be replaced with the `for>` macro. This takes inline
+type annotations for the return type and each variable binding. There are [a
+few more cases] [typed-wrapper-macros] where you need to use special macros,
+but not many.
+
+Secondly functions passed to higher order functions needed annotations. This
+meant I had to break my anonymous functions out into top level definitions.
+Ambrose [has written] [polymorphic-hof] about this situation but it's unlikely
+to be overcome in the near future.
+
+Even with these limitations I think it's awesome that a dynamic language can
+have a type system added to it without needing any compiler extensions. If you
+do to then [help support the development of core.typed] [indie-gogo].
+
+[core.typed]: https://github.com/clojure/core.typed
+[game-of-life]: http://en.wikipedia.org/wiki/Conway's_Game_of_Life
+[scala]: http://www.scala-lang.org/
+[haskell]: http://www.haskell.org/haskellwiki/Haskell
+[birds-eye-view-full]: /images/birds-eye-view-typed-gol-full-size.gif
+[gol-github]: https://github.com/logaan/typed-game-of-life
+[typed-wrapper-macros]: https://github.com/clojure/core.typed/wiki/User-Guide#typed-wrapper-macros
+[polymorphic-hof]: http://frenchy64.github.io/typed/clojure,/core.typed,/clojure/2013/09/02/polymorphic-hof.html
+[indie-gogo]: http://www.indiegogo.com/projects/typed-clojure
+
