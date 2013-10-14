@@ -4,7 +4,8 @@
 </pre></div><div class="public" id="var--%3EPredicate"><h3>-&gt;Predicate</h3><div class="usage"><code>(-&gt;Predicate selector predicate information)</code></div><pre class="doc">Positional factory function for class vlad.validation_types.Predicate.
 </pre></div><div class="public" id="var-Validation"><h3>Validation</h3><div class="usage"></div><pre class="doc">The core of vlad is the `Validation` protocol. It simply requires that your
 validation type knows how to run against some data. Implementations of
-`validate` should return a sequence of errors as strings.</pre></div><div class="public" id="var-chain"><h3>chain</h3><div class="usage"><code>(chain)</code><code>(chain left)</code><code>(chain left right)</code><code>(chain left right &amp; validations)</code></div><pre class="doc">Example:
+`validate` should return a sequence of errors. An error may be anything but
+is generally of the form `{:type ::something :some-extra-data 123}`.</pre></div><div class="public" id="var-chain"><h3>chain</h3><div class="usage"><code>(chain)</code><code>(chain left)</code><code>(chain left right)</code><code>(chain left right &amp; validations)</code></div><pre class="doc">Example:
 
 (chain
   (present &quot;Password&quot; :password)
