@@ -69,7 +69,7 @@ Now we know our data is bad, but not why. We need more information.
 Of course data can be wrong in more than one way.
 
 {% highlight clojure %}
-(good-day-for-a-picnic? #inst "2013-04-14")
+(good-day-for-a-picnic? #inst "2013-04-15")
   => ["That's not during summer"
       "Mondays suck for picnics"]
 {% endhighlight %}
